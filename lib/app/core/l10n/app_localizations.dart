@@ -97,6 +97,136 @@ abstract class AppLocalizations {
     Locale('en'),
     Locale('pt'),
   ];
+
+  /// No description provided for @tasksManager.
+  ///
+  /// In pt, this message translates to:
+  /// **'Gerenciador de Tarefas'**
+  String get tasksManager;
+
+  /// No description provided for @loading.
+  ///
+  /// In pt, this message translates to:
+  /// **'Carregando tarefas'**
+  String get loading;
+
+  /// Erro ao carregar as tarefas
+  /// ({error})
+  ///
+  /// In pt, this message translates to:
+  /// **'Erro ao carregar as tarefas\n{error}'**
+  String errorList(String error);
+
+  /// No description provided for @total.
+  ///
+  /// In pt, this message translates to:
+  /// **'Total'**
+  String get total;
+
+  /// No description provided for @pendent.
+  ///
+  /// In pt, this message translates to:
+  /// **'Pendentes'**
+  String get pendent;
+
+  /// No description provided for @completed.
+  ///
+  /// In pt, this message translates to:
+  /// **'Concluídas'**
+  String get completed;
+
+  /// No description provided for @searchTasks.
+  ///
+  /// In pt, this message translates to:
+  /// **'Buscar tarefas...'**
+  String get searchTasks;
+
+  /// Todas ({value})
+  ///
+  /// In pt, this message translates to:
+  /// **'Todas ({value})'**
+  String allTasksValue(String value);
+
+  /// No description provided for @pendentTasksValue.
+  ///
+  /// In pt, this message translates to:
+  /// **'Pendentes ({value})'**
+  String pendentTasksValue(Object value);
+
+  /// Concluídas ({value})
+  ///
+  /// In pt, this message translates to:
+  /// **'Concluídas ({value})'**
+  String completedtTasksValue(String value);
+
+  /// No description provided for @editTask.
+  ///
+  /// In pt, this message translates to:
+  /// **'Editar Tarefa'**
+  String get editTask;
+
+  /// No description provided for @newTask.
+  ///
+  /// In pt, this message translates to:
+  /// **'Nova Tarefa'**
+  String get newTask;
+
+  /// No description provided for @title.
+  ///
+  /// In pt, this message translates to:
+  /// **'Título *'**
+  String get title;
+
+  /// No description provided for @enterTitle.
+  ///
+  /// In pt, this message translates to:
+  /// **'Digite o título'**
+  String get enterTitle;
+
+  /// No description provided for @description.
+  ///
+  /// In pt, this message translates to:
+  /// **'Descrição (opcional)'**
+  String get description;
+
+  /// No description provided for @enterDescription.
+  ///
+  /// In pt, this message translates to:
+  /// **'Digite a descrição'**
+  String get enterDescription;
+
+  /// No description provided for @save.
+  ///
+  /// In pt, this message translates to:
+  /// **'Salvar'**
+  String get save;
+
+  /// No description provided for @cancel.
+  ///
+  /// In pt, this message translates to:
+  /// **'Cancelar'**
+  String get cancel;
+
+  /// Criado em
+  /// {createdAt}
+  ///
+  /// In pt, this message translates to:
+  /// **'Criado em\n{createdAt}'**
+  String createdAt(String createdAt);
+
+  /// Editado em
+  /// {editedAt}
+  ///
+  /// In pt, this message translates to:
+  /// **'Editado em\n{editedAt}'**
+  String editedAt(String editedAt);
+
+  /// Concluído em
+  /// {completedAt}
+  ///
+  /// In pt, this message translates to:
+  /// **'Concluído em\n{completedAt}'**
+  String completedAt(String completedAt);
 }
 
 class _AppLocalizationsDelegate

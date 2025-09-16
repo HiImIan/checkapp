@@ -30,18 +30,23 @@ abstract class CustomColors {
   static const Color transparentRed = Color(0x24C1362F);
 
   // Primary colors
-  static const Color primary = Color(0xFFFF69B4);
-  static const Color lightPrimary = Color(0xFFFFA8FB);
-  static const Color highPrimary = Color(0xFFFF4FA3);
+  static const Color pink = Color(0xFFFF69B4);
+  static const Color lightPink = Color(0xFFFFA8FB);
+  static const Color highPink = Color(0xFFFF4FA3);
 
   // Secondary colors
-  static const Color secundary = Color(0x5F8B5CF6);
+  static const Color purple = Color(0x5F8B5CF6);
+
+  // Terciary colors
+  static const Color orange = Color(0xFFFF9800);
+  static const Color green = Color(0xFF4CAF50);
 
   // Background colors
-  static const Color onPrimary = Color(0xFFFFF8FC); // default background
+  static const Color background = Color(0xFFFEFDFE); // default background
   static const Color cardBackground = Color(0xFFFFEBF5);
 
   // high contrast colors
   static const Color white = Color(0xFFFFFFFF);
   static const Color black = Colors.black;
+  static const Color transparentBlack = Color(0x26000000);
 }

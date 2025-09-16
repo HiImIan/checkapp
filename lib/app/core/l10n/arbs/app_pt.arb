@@ -1,2 +1,77 @@
 {
+    "tasksManager":"Gerenciador de Tarefas",
+    "loading": "Carregando tarefas",
+    "errorList": "Erro ao carregar as tarefas\n{error}",
+    "@errorList": {
+        "description": "Erro ao carregar as tarefas\n({error})",
+        "placeholders":{
+            "error":{
+                "type": "String"
+            }
+        }
+    },
+    "total": "Total",
+    "pendent": "Pendentes",
+    "completed": "Concluídas",
+    "searchTasks": "Buscar tarefas...",
+    "allTasksValue": "Todas ({value})",
+    "@allTasksValue": {
+        "description": "Todas ({value})",
+        "placeholders":{
+            "value":{
+                "type": "String"
+            }
+        }
+    },"pendentTasksValue": "Pendentes ({value})",
+    "@pendentListValue": {
+        "description": "Pendentes ({value})",
+        "placeholders":{
+            "value":{
+                "type": "String"
+            }
+        }
+    },
+    "completedtTasksValue": "Concluídas ({value})",
+    "@completedtTasksValue": {
+        "description": "Concluídas ({value})",
+        "placeholders":{
+            "value":{
+                "type": "String"
+            }
+        }
+    },
+    "editTask": "Editar Tarefa",
+    "newTask": "Nova Tarefa",
+    "title": "Título *",
+    "enterTitle": "Digite o título",
+    "description": "Descrição (opcional)",
+    "enterDescription": "Digite a descrição",
+    "save": "Salvar",
+    "cancel":"Cancelar",
+    "createdAt": "Criado em\n{createdAt}",
+    "@createdAt": {
+        "description": "Criado em\n{createdAt}",
+        "placeholders":{
+            "createdAt":{
+                "type": "String"
+            }
+        }
+    },"editedAt": "Editado em\n{editedAt}",
+    "@editedAt": {
+        "description": "Editado em\n{editedAt}",
+        "placeholders":{
+            "editedAt":{
+                "type": "String"
+            }
+        }
+    },
+    "completedAt": "Concluído em\n{completedAt}",
+    "@completedAt": {
+        "description": "Concluído em\n{completedAt}",
+        "placeholders":{
+            "completedAt":{
+                "type": "String"
+            }
+        }
+    }
 }

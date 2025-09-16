@@ -2,38 +2,63 @@ import 'package:checkapp/app/core/themes/custom_colors.dart';
 import 'package:flutter/material.dart';
 
 class AppTheme {
-  static ThemeData get theme => ThemeData.light(useMaterial3: false).copyWith(
-    scaffoldBackgroundColor: CustomColors.onPrimary,
+  static ThemeData get theme => ThemeData.light().copyWith(
+    // WIDGETS
+    scaffoldBackgroundColor: CustomColors.background,
     appBarTheme: AppBarTheme(
-      color: CustomColors.primary,
-
+      color: CustomColors.pink,
       titleTextStyle: TextStyle(
-        color: CustomColors.onPrimary,
+        color: CustomColors.background,
         fontWeight: FontWeight.bold,
       ),
-      iconTheme: IconThemeData(color: CustomColors.primary),
       elevation: 4,
       centerTitle: true,
-      actionsIconTheme: IconThemeData(color: CustomColors.white),
     ),
     cardTheme: CardThemeData(
       color: CustomColors.cardBackground,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       elevation: 1,
     ),
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: CustomColors.highPink,
+      foregroundColor: CustomColors.background,
+    ),
     dialogTheme: DialogThemeData(
-      backgroundColor: CustomColors.cardBackground,
-
+      backgroundColor: CustomColors.background,
+      titleTextStyle: TextStyle(color: CustomColors.black),
+      contentTextStyle: TextStyle(color: CustomColors.black),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(20)),
       ),
     ),
-    hintColor: CustomColors.lightPrimary,
+    //TEXTS
+    textTheme: TextTheme(
+      titleLarge: TextStyle(color: CustomColors.black),
+      bodyLarge: TextStyle(color: CustomColors.black),
+      bodyMedium: TextStyle(color: CustomColors.black),
+    ),
+    //COLORS
+    hintColor: CustomColors.lightPink,
+    splashColor: CustomColors.lightPink,
     colorScheme: ColorScheme.fromSeed(
       seedColor: CustomColors.graySwatch,
       brightness: Brightness.light,
-      primary: CustomColors.primary,
+      // backgrounds
+      surface: CustomColors.background,
+      surfaceContainer: CustomColors.cardBackground,
+      surfaceDim: CustomColors.graySwatch.shade500,
+      onSurface: CustomColors.black,
+      onSurfaceVariant: CustomColors.transparentBlack,
+      //primary
+      primary: CustomColors.pink,
+      primaryFixed: CustomColors.highPink,
+      primaryFixedDim: CustomColors.lightPink,
       onPrimary: CustomColors.white,
+      // secondary
+      secondary: CustomColors.purple,
+      // terciary
+      tertiary: CustomColors.orange,
+      onTertiaryFixedVariant: CustomColors.green,
     ),
   );
 }

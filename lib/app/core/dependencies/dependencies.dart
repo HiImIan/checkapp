@@ -5,7 +5,10 @@ import 'package:provider/single_child_widget.dart';
 
 List<SingleChildWidget> get providers {
   return [
-    Provider(create: (context) => TasksRepository()),
+    Provider<TasksRepository>(
+      create: (context) => TasksRepositoryImpl(),
+      lazy: false,
+    ),
     ChangeNotifierProvider(
       create: (ctx) =>
           TasksViewModel(tasksRepository: ctx.read<TasksRepository>()),
