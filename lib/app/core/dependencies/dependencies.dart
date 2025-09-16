@@ -7,7 +7,8 @@ List<SingleChildWidget> get providers {
   return [
     Provider(create: (context) => TasksRepository()),
     ChangeNotifierProvider(
-      create: (ctx) => TasksViewModel(tasksRepository: ctx.read()),
+      create: (ctx) =>
+          TasksViewModel(tasksRepository: ctx.read<TasksRepository>()),
     ),
   ];
 }
