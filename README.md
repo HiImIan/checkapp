@@ -1,6 +1,5 @@
 ## 📱 Download APK
-
-[![Download APK](https://img.shields.io/badge/📱%20Download%20APK-v1.0.0-blue?style=for-the-badge&logo=android)]([https://drive.google.com/file/d/1SKj2_6YqwT7tfmlEajXUnKihIbBYDpyV/view?usp=sharing])
+https://drive.google.com/file/d/1SKj2_6YqwT7tfmlEajXUnKihIbBYDpyV/view?usp=sharing
 
 ## 📝 Gerenciador de Tarefas - Flutter
 Um aplicativo simples e intuitivo de gerenciamento de tarefas desenvolvido em Flutter, focando em usabilidade e boas práticas de desenvolvimento mobile.
