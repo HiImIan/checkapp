@@ -46,9 +46,10 @@ Separação adequada de responsabilidades
 
 ## 🚀 Como Executar
 
-Clone este repositório
-Certifique-se de ter o Flutter instalado
-Execute flutter pub get para instalar dependências
-Execute flutter run para iniciar o aplicativo
+### 1- Clone este repositório (necessário Git)
+### 2- Certifique-se de ter o Flutter instalado
+### 3- Execute flutter pub get para instalar dependências
+### 4- Abra o Android Studio (ou use um dispositivo físico) em conjunto como um compilador de código
+### 5- Execute flutter run para iniciar o aplicativo
 
 Desenvolvido para demonstrar competências em desenvolvimento Flutter, focando em qualidade de código, boas práticas e experiência do usuário.
