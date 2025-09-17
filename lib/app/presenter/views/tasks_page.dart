@@ -77,7 +77,7 @@ class _TasksPageState extends State<TasksPage> {
           );
         },
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
         onPressed: _showAddTaskDialog,
         child: Icon(floatingIcon),
