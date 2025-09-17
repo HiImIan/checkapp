@@ -14,6 +14,7 @@ class TasksErrorWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          SizedBox(height: 20),
           Icon(Icons.error_outline, size: 64, color: theme.colorScheme.error),
           SizedBox(height: 16),
           Text(

@@ -1,10 +1,14 @@
 import 'package:checkapp/app/core/l10n/l10n.dart';
-import 'package:checkapp/app/presenter/view_models/tasks_view_model.dart';
 import 'package:flutter/material.dart';
 
 class TasksSearchWidget extends StatelessWidget {
-  final TasksViewModel tasksViewModel;
-  const TasksSearchWidget({super.key, required this.tasksViewModel});
+  final bool isEnabled;
+  final void Function(String)? onChange;
+  const TasksSearchWidget({
+    super.key,
+    required this.isEnabled,
+    required this.onChange,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +29,13 @@ class TasksSearchWidget extends StatelessWidget {
         ],
       ),
       child: TextField(
+        enabled: isEnabled,
         style: textStyle.bodyLarge!.copyWith(color: colors.surfaceDim),
         decoration: InputDecoration(
           contentPadding: EdgeInsets.symmetric(horizontal: 5, vertical: 15),
           hintText: l10n.searchTasks,
           hintStyle: textStyle.bodyLarge!.copyWith(
-            color: colors.primaryFixed,
+            color: colors.primaryFixedDim,
             fontWeight: FontWeight.bold,
           ),
           prefixIcon: Icon(Icons.search),
@@ -39,7 +44,7 @@ class TasksSearchWidget extends StatelessWidget {
           border: InputBorder.none,
         ),
 
-        onChanged: tasksViewModel.searchTasks,
+        onChanged: onChange,
       ),
     );
   }

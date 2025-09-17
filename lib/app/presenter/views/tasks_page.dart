@@ -1,13 +1,10 @@
-import 'package:checkapp/app/presenter/models/task_model.dart';
 import 'package:checkapp/app/presenter/view_models/tasks_view_model.dart';
-import 'package:checkapp/app/presenter/views/widgets/exceptions/tasks_error_widget.dart';
-import 'package:checkapp/app/presenter/views/widgets/exceptions/tasks_load_widget.dart';
 import 'package:checkapp/app/presenter/views/widgets/persistent_components/tasks_appbar_widget.dart';
 import 'package:checkapp/app/presenter/views/widgets/persistent_components/tasks_filters_widget.dart';
 import 'package:checkapp/app/presenter/views/widgets/persistent_components/tasks_search_widget.dart';
 import 'package:checkapp/app/presenter/views/widgets/persistent_components/tasks_statistics_widget.dart';
 import 'package:checkapp/app/presenter/views/widgets/tasks_dialog_widget.dart';
-import 'package:checkapp/app/presenter/views/widgets/tasks_item_widget.dart';
+import 'package:checkapp/app/presenter/views/widgets/tasks_widget.dart';
 import 'package:flutter/material.dart';
 
 class TasksPage extends StatefulWidget {
@@ -31,39 +28,29 @@ class _TasksPageState extends State<TasksPage> {
 
   void _showAddTaskDialog() {
     tasksViewModel.prepareAddTask();
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (_) => TasksDialogWidget(tasksViewModel: tasksViewModel),
-    );
-  }
 
-  void _showEditTaskDialog(TaskModel task) {
-    tasksViewModel.prepareEditTask(task);
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (_) => TasksDialogWidget(tasksViewModel: tasksViewModel),
-    );
+    if (tasksViewModel.error == null) {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (_) => TasksDialogWidget(tasksViewModel: tasksViewModel),
+      );
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    final length = tasksViewModel.filteredTasks.length;
+    final hasError = tasksViewModel.error != null;
+    final floatingIcon = !hasError ? Icons.add : Icons.replay_outlined;
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(70),
         child: TasksAppbarWidget(),
       ),
-      body: AnimatedBuilder(
-        animation: tasksViewModel,
+      body: ListenableBuilder(
+        listenable: tasksViewModel,
         builder: (_, __) {
           final isLoading = tasksViewModel.isLoading;
-          if (isLoading) return TasksLoadWidget();
-
-          final error = tasksViewModel.error;
-          if (error != null) return TasksErrorWidget(error: error);
-
           return Column(
             children: [
               Padding(
@@ -75,8 +62,13 @@ class _TasksPageState extends State<TasksPage> {
                     TasksStatisticsWidget(tasksViewModel: tasksViewModel),
                     SizedBox(height: 20),
                     // Textfield
-                    TasksSearchWidget(tasksViewModel: tasksViewModel),
-                    SizedBox(height: 20),
+                    if (!hasError) ...[
+                      TasksSearchWidget(
+                        isEnabled: !isLoading,
+                        onChange: tasksViewModel.searchTasks,
+                      ),
+                      SizedBox(height: 20),
+                    ],
                     // Filter tabs
                     TasksFiltersWidget(tasksViewModel: tasksViewModel),
                     SizedBox(height: 20),
@@ -84,36 +76,14 @@ class _TasksPageState extends State<TasksPage> {
                 ),
               ),
               // Tasks list
-              Expanded(
-                child: ListView.builder(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  itemCount: length,
-                  itemBuilder: (_, index) {
-                    final task = tasksViewModel.filteredTasks[index];
-
-                    final isLargeList =
-                        tasksViewModel.filteredTasks.length >= 20;
-                    final isNearLastItem = index == length - 3;
-                    if (isLargeList && isNearLastItem) {
-                      //TODO fazer lista carregar conforme proximidade do fim da lista
-                    }
-                    return TasksItemWidget(
-                      task: task,
-                      onTapCheck: () =>
-                          tasksViewModel.toggleTaskCompletion(task.id),
-                      onTapEdit: () => _showEditTaskDialog(task),
-                      onTapDelete: () => tasksViewModel.deleteTask(task.id),
-                    );
-                  },
-                ),
-              ),
+              TasksWidget(tasksViewModel: tasksViewModel),
             ],
           );
         },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _showAddTaskDialog,
-        child: Icon(Icons.add),
+        child: Icon(floatingIcon),
       ),
     );
   }

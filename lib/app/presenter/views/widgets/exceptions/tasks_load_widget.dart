@@ -15,6 +15,7 @@ class TasksLoadWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          SizedBox(height: 20),
           Text(
             l10n.loading,
             textAlign: TextAlign.center,

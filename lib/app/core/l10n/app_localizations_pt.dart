@@ -20,6 +20,9 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
+  String get reload => 'Recarregar';
+
+  @override
   String get total => 'Total';
 
   @override
@@ -84,4 +87,28 @@ class AppLocalizationsPt extends AppLocalizations {
   String completedAt(String completedAt) {
     return 'Concluído em\n$completedAt';
   }
+
+  @override
+  String get addFirstTask => 'Nenhuma tafera encontrada';
+
+  @override
+  String get failedToInicialize => 'Falha ao iniciar';
+
+  @override
+  String get failedToLoad => 'Falha ao carregar tarefas';
+
+  @override
+  String get failedToUpdate => 'Falha ao atualizar tarefa';
+
+  @override
+  String get failedToAdd => 'Falha ao adicionar tarefa';
+
+  @override
+  String get failedToDelete => 'Falha ao remover tarefa';
+
+  @override
+  String get failedToToggleStatus => 'Falha ao alterar status da tarefa';
+
+  @override
+  String get failedToSearch => 'Falha ao procurar tarefa';
 }

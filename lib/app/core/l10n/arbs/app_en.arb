@@ -1,2 +1,88 @@
 {
+    "tasksManager": "Task Manager",
+    "loading": "Loading tasks",
+    "errorList": "Error loading tasks\n{error}",
+    "@errorList": {
+        "description": "Error loading tasks\n({error})",
+        "placeholders": {
+            "error": {
+                "type": "String"
+            }
+        }
+    },
+    "reload": "Reload",
+    "total": "Total",
+    "pendent": "Pending",
+    "completed": "Completed",
+    "searchTasks": "Search tasks...",
+    "allTasksValue": "All ({value})",
+    "@allTasksValue": {
+        "description": "All ({value})",
+        "placeholders": {
+            "value": {
+                "type": "String"
+            }
+        }
+    },
+    "pendentTasksValue": "Pending ({value})",
+    "@pendentListValue": {
+        "description": "Pending ({value})",
+        "placeholders": {
+            "value": {
+                "type": "String"
+            }
+        }
+    },
+    "completedtTasksValue": "Completed ({value})",
+    "@completedtTasksValue": {
+        "description": "Completed ({value})",
+        "placeholders": {
+            "value": {
+                "type": "String"
+            }
+        }
+    },
+    "editTask": "Edit Task",
+    "newTask": "New Task",
+    "title": "Title *",
+    "enterTitle": "Enter title",
+    "description": "Description (optional)",
+    "enterDescription": "Enter description",
+    "save": "Save",
+    "cancel": "Cancel",
+    "createdAt": "Created on\n{createdAt}",
+    "@createdAt": {
+        "description": "Created on\n{createdAt}",
+        "placeholders": {
+            "createdAt": {
+                "type": "String"
+            }
+        }
+    },
+    "editedAt": "Edited on\n{editedAt}",
+    "@editedAt": {
+        "description": "Edited on\n{editedAt}",
+        "placeholders": {
+            "editedAt": {
+                "type": "String"
+            }
+        }
+    },
+    "completedAt": "Completed on\n{completedAt}",
+    "@completedAt": {
+        "description": "Completed on\n{completedAt}",
+        "placeholders": {
+            "completedAt": {
+                "type": "String"
+            }
+        }
+    },
+    "addFirstTask": "No tasks found",
+    "failedToInicialize": "Failed to start",
+    "failedToLoad": "Failed to load tasks",
+    "failedToUpdate": "Failed to update task",
+    "failedToAdd": "Failed to add task",
+    "failedToDelete": "Failed to delete task",
+    "failedToToggleStatus": "Failed to change task status",
+    "failedToSearch": "Failed to search task"
 }

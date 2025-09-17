@@ -34,6 +34,7 @@ class AppTheme {
     //TEXTS
     textTheme: TextTheme(
       titleLarge: TextStyle(color: CustomColors.black),
+      titleSmall: TextStyle(color: CustomColors.black),
       bodyLarge: TextStyle(color: CustomColors.black),
       bodyMedium: TextStyle(color: CustomColors.black),
     ),

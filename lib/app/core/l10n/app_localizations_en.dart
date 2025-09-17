@@ -9,79 +9,106 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get tasksManager => 'Gerenciador de Tarefas';
+  String get tasksManager => 'Task Manager';
 
   @override
-  String get loading => 'Carregando tarefas';
+  String get loading => 'Loading tasks';
 
   @override
   String errorList(String error) {
-    return 'Erro ao carregar as tarefas\n$error';
+    return 'Error loading tasks\n$error';
   }
+
+  @override
+  String get reload => 'Reload';
 
   @override
   String get total => 'Total';
 
   @override
-  String get pendent => 'Pendentes';
+  String get pendent => 'Pending';
 
   @override
-  String get completed => 'Concluídas';
+  String get completed => 'Completed';
 
   @override
-  String get searchTasks => 'Buscar tarefas...';
+  String get searchTasks => 'Search tasks...';
 
   @override
   String allTasksValue(String value) {
-    return 'Todas ($value)';
+    return 'All ($value)';
   }
 
   @override
   String pendentTasksValue(Object value) {
-    return 'Pendentes ($value)';
+    return 'Pending ($value)';
   }
 
   @override
   String completedtTasksValue(String value) {
-    return 'Concluídas ($value)';
+    return 'Completed ($value)';
   }
 
   @override
-  String get editTask => 'Editar Tarefa';
+  String get editTask => 'Edit Task';
 
   @override
-  String get newTask => 'Nova Tarefa';
+  String get newTask => 'New Task';
 
   @override
-  String get title => 'Título *';
+  String get title => 'Title *';
 
   @override
-  String get enterTitle => 'Digite o título';
+  String get enterTitle => 'Enter title';
 
   @override
-  String get description => 'Descrição (opcional)';
+  String get description => 'Description (optional)';
 
   @override
-  String get enterDescription => 'Digite a descrição';
+  String get enterDescription => 'Enter description';
 
   @override
-  String get save => 'Salvar';
+  String get save => 'Save';
 
   @override
-  String get cancel => 'Cancelar';
+  String get cancel => 'Cancel';
 
   @override
   String createdAt(String createdAt) {
-    return 'Criado em\n$createdAt';
+    return 'Created on\n$createdAt';
   }
 
   @override
   String editedAt(String editedAt) {
-    return 'Editado em\n$editedAt';
+    return 'Edited on\n$editedAt';
   }
 
   @override
   String completedAt(String completedAt) {
-    return 'Concluído em\n$completedAt';
+    return 'Completed on\n$completedAt';
   }
+
+  @override
+  String get addFirstTask => 'No tasks found';
+
+  @override
+  String get failedToInicialize => 'Failed to start';
+
+  @override
+  String get failedToLoad => 'Failed to load tasks';
+
+  @override
+  String get failedToUpdate => 'Failed to update task';
+
+  @override
+  String get failedToAdd => 'Failed to add task';
+
+  @override
+  String get failedToDelete => 'Failed to delete task';
+
+  @override
+  String get failedToToggleStatus => 'Failed to change task status';
+
+  @override
+  String get failedToSearch => 'Failed to search task';
 }

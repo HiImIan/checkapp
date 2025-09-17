@@ -117,6 +117,12 @@ abstract class AppLocalizations {
   /// **'Erro ao carregar as tarefas\n{error}'**
   String errorList(String error);
 
+  /// No description provided for @reload.
+  ///
+  /// In pt, this message translates to:
+  /// **'Recarregar'**
+  String get reload;
+
   /// No description provided for @total.
   ///
   /// In pt, this message translates to:
@@ -227,6 +233,54 @@ abstract class AppLocalizations {
   /// In pt, this message translates to:
   /// **'Concluído em\n{completedAt}'**
   String completedAt(String completedAt);
+
+  /// No description provided for @addFirstTask.
+  ///
+  /// In pt, this message translates to:
+  /// **'Nenhuma tafera encontrada'**
+  String get addFirstTask;
+
+  /// No description provided for @failedToInicialize.
+  ///
+  /// In pt, this message translates to:
+  /// **'Falha ao iniciar'**
+  String get failedToInicialize;
+
+  /// No description provided for @failedToLoad.
+  ///
+  /// In pt, this message translates to:
+  /// **'Falha ao carregar tarefas'**
+  String get failedToLoad;
+
+  /// No description provided for @failedToUpdate.
+  ///
+  /// In pt, this message translates to:
+  /// **'Falha ao atualizar tarefa'**
+  String get failedToUpdate;
+
+  /// No description provided for @failedToAdd.
+  ///
+  /// In pt, this message translates to:
+  /// **'Falha ao adicionar tarefa'**
+  String get failedToAdd;
+
+  /// No description provided for @failedToDelete.
+  ///
+  /// In pt, this message translates to:
+  /// **'Falha ao remover tarefa'**
+  String get failedToDelete;
+
+  /// No description provided for @failedToToggleStatus.
+  ///
+  /// In pt, this message translates to:
+  /// **'Falha ao alterar status da tarefa'**
+  String get failedToToggleStatus;
+
+  /// No description provided for @failedToSearch.
+  ///
+  /// In pt, this message translates to:
+  /// **'Falha ao procurar tarefa'**
+  String get failedToSearch;
 }
 
 class _AppLocalizationsDelegate

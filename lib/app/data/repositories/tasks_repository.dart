@@ -18,7 +18,7 @@ class TasksRepositoryImpl implements TasksRepository {
 
   Box<TaskModel> get _taskBox {
     if (_box == null || !_box!.isOpen) {
-      throw Exception('Repositório não inicializado.');
+      throw Exception('Repository not initialized.');
     }
     return _box!;
   }
@@ -34,7 +34,7 @@ class TasksRepositoryImpl implements TasksRepository {
 
       _box = await Hive.openBox<TaskModel>(_boxName);
     } catch (e) {
-      throw Exception('Erro ao inicializar repositório: $e');
+      throw Exception('Failed to initialize repository: $e');
     }
   }
 
@@ -43,16 +43,10 @@ class TasksRepositoryImpl implements TasksRepository {
     try {
       final box = _taskBox;
       final tasks = box.values.toList();
-
-      tasks.sort(
-        (a, b) => _parseDate(
-          b.editedAt ?? b.createdAt,
-        ).compareTo(_parseDate(a.editedAt ?? a.createdAt)),
-      );
-
+      _sortTasksByDate(tasks);
       return tasks;
     } catch (e) {
-      throw Exception('Erro ao carregar tarefas: $e');
+      throw Exception('Failed to load tasks: $e');
     }
   }
 
@@ -60,9 +54,9 @@ class TasksRepositoryImpl implements TasksRepository {
   Future<void> addTask(TaskModel task) async {
     try {
       final box = _taskBox;
-      await box.put(task.id, task);
+      await box.put(task.id, task.copyWith(createdAt: _getCurrentDateString()));
     } catch (e) {
-      throw Exception('Erro ao adicionar tarefa: $e');
+      throw Exception('Failed to add task: $e');
     }
   }
 
@@ -72,12 +66,12 @@ class TasksRepositoryImpl implements TasksRepository {
       final box = _taskBox;
 
       if (!box.containsKey(task.id)) {
-        throw Exception('Tarefa não encontrada para atualização');
+        throw Exception('Task not found for update');
       }
 
-      await box.put(task.id, task);
+      await box.put(task.id, task.copyWith(editedAt: _getCurrentDateString()));
     } catch (e) {
-      throw Exception('Erro ao atualizar tarefa: $e');
+      throw Exception('Failed to update task: $e');
     }
   }
 
@@ -87,12 +81,12 @@ class TasksRepositoryImpl implements TasksRepository {
       final box = _taskBox;
 
       if (!box.containsKey(id)) {
-        throw Exception('Tarefa não encontrada para exclusão');
+        throw Exception('Task not found for deletion');
       }
 
       await box.delete(id);
     } catch (e) {
-      throw Exception('Erro ao deletar tarefa: $e');
+      throw Exception('Failed to delete task: $e');
     }
   }
 
@@ -103,25 +97,20 @@ class TasksRepositoryImpl implements TasksRepository {
       final task = box.get(id);
 
       if (task == null) {
-        throw Exception('Tarefa não encontrada para alteração de status');
+        throw Exception('Task not found for status change');
       }
 
-      final now = DateTime.now();
-      final dateStr =
-          '${now.day.toString().padLeft(2, '0')}/${now.month.toString().padLeft(2, '0')}/${now.year}';
-
-      final updatedTask = TaskModel(
-        id: task.id,
+      final updatedTask = task.copyWith(
         title: task.title,
         description: task.description,
         createdAt: task.createdAt,
-        editedAt: dateStr,
+        editedAt: _getCurrentDateString(),
         isCompleted: !task.isCompleted,
       );
 
       await box.put(id, updatedTask);
     } catch (e) {
-      throw Exception('Erro ao alterar status da tarefa: $e');
+      throw Exception('Failed to toggle task status: $e');
     }
   }
 
@@ -140,6 +129,7 @@ class TasksRepositoryImpl implements TasksRepository {
             task.description.toLowerCase().contains(lowercaseQuery);
       }).toList();
 
+      // Prioritize title matches, then sort by date
       filteredTasks.sort((a, b) {
         final aTitleMatch = a.title.toLowerCase().contains(lowercaseQuery);
         final bTitleMatch = b.title.toLowerCase().contains(lowercaseQuery);
@@ -154,12 +144,18 @@ class TasksRepositoryImpl implements TasksRepository {
 
       return filteredTasks;
     } catch (e) {
-      throw Exception('Erro ao buscar tarefas: $e');
+      throw Exception('Failed to search tasks: $e');
     }
   }
 
-  @override
-  Future<void> dispose() async => await _box?.close();
+  // Utility methods
+  void _sortTasksByDate(List<TaskModel> tasks) {
+    tasks.sort(
+      (a, b) => _parseDate(
+        b.editedAt ?? b.createdAt,
+      ).compareTo(_parseDate(a.editedAt ?? a.createdAt)),
+    );
+  }
 
   DateTime _parseDate(String dateStr) {
     try {
@@ -175,4 +171,14 @@ class TasksRepositoryImpl implements TasksRepository {
       return DateTime.now();
     }
   }
+
+  String _getCurrentDateString() {
+    final now = DateTime.now();
+    return '${now.day.toString().padLeft(2, '0')}/'
+        '${now.month.toString().padLeft(2, '0')}/'
+        '${now.year}';
+  }
+
+  @override
+  Future<void> dispose() async => await _box?.close();
 }

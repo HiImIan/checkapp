@@ -10,6 +10,7 @@
             }
         }
     },
+    "reload": "Recarregar",
     "total": "Total",
     "pendent": "Pendentes",
     "completed": "Concluídas",
@@ -73,5 +74,13 @@
                 "type": "String"
             }
         }
-    }
+    },
+    "addFirstTask": "Nenhuma tafera encontrada",
+    "failedToInicialize": "Falha ao iniciar",
+    "failedToLoad": "Falha ao carregar tarefas",
+    "failedToUpdate": "Falha ao atualizar tarefa",
+    "failedToAdd":"Falha ao adicionar tarefa",
+    "failedToDelete": "Falha ao remover tarefa",
+    "failedToToggleStatus":"Falha ao alterar status da tarefa",
+    "failedToSearch": "Falha ao procurar tarefa"
 }
