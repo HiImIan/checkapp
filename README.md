@@ -1,6 +1,11 @@
-📝 Gerenciador de Tarefas - Flutter
+## 📱 Download APK
+
+[![Download APK](https://img.shields.io/badge/📱%20Download%20APK-v1.0.0-blue?style=for-the-badge&logo=android)]([https://drive.google.com/file/d/1SKj2_6YqwT7tfmlEajXUnKihIbBYDpyV/view?usp=sharing])
+
+## 📝 Gerenciador de Tarefas - Flutter
 Um aplicativo simples e intuitivo de gerenciamento de tarefas desenvolvido em Flutter, focando em usabilidade e boas práticas de desenvolvimento mobile.
-✨ Funcionalidades
+
+## ✨ Funcionalidades
 
 📋 Listar Tarefas: Visualize todas as suas tarefas com título e status de forma organizada
 ➕ Criar Tarefa: Adicione novas tarefas com título obrigatório e descrição opcional
@@ -8,31 +13,31 @@ Um aplicativo simples e intuitivo de gerenciamento de tarefas desenvolvido em Fl
 🗑️ Excluir Tarefa: Remova tarefas que não são mais necessárias
 💾 Persistência Local: As tarefas são salvas localmente e permanecem após reiniciar o app
 
-🎯 Status das Tarefas
+## 🎯 Status das Tarefas
 
 Pendente: Tarefas ainda não concluídas
 Concluída: Tarefas finalizadas
 
-🎨 Design e UX
+## 🎨 Design e UX
 
 Interface limpa e intuitiva seguindo Material Design
 Transições suaves para melhor experiência do usuário
 Design responsivo que se adapta a diferentes tamanhos de tela
 Atualizações automáticas da interface ao modificar tarefas
 
-🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 Flutter: Framework principal para desenvolvimento
 Material Design: Sistema de design para interface consistente
 Hive: Armazenamento local para persistência de dados
 
-✅ Validações Implementadas
+## ✅ Validações Implementadas
 
 Título obrigatório para criar/editar tarefas
 Tratamento adequado de erros e entradas inválidas
 Feedback visual para ações do usuário
 
-🏗️ Estrutura do Projeto
+## 🏗️ Estrutura do Projeto
 O projeto segue as práticas de organização MVVM:
 
 Estrutura de pastas clara e intuitiva
@@ -40,7 +45,7 @@ Código limpo e bem documentado
 Nomenclatura consistente de variáveis e métodos
 Separação adequada de responsabilidades
 
-🚀 Como Executar
+## 🚀 Como Executar
 
 Clone este repositório
 Certifique-se de ter o Flutter instalado
