@@ -39,7 +39,7 @@ class _TasksWidgetState extends State<TasksWidget> {
       replacement: TasksNoItemWidget(),
       child: Expanded(
         child: ListView.builder(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.only(right: 20, left: 20, bottom: 80),
           itemCount: length,
           itemBuilder: (_, index) {
             final task = tasksViewModel.filteredTasks[index];

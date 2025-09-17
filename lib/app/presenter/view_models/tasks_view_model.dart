@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 class TasksViewModel extends ChangeNotifier {
   final TasksRepository _tasksRepository;
 
+  final TextEditingController searchController = TextEditingController();
   final TextEditingController titleController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
 
@@ -103,6 +104,12 @@ class TasksViewModel extends ChangeNotifier {
     await _executeWithLoading(() async {
       _tasks = await _tasksRepository.searchTasks(query.trim());
     }, l10n.failedToSearch);
+  }
+
+  void clearSearchTask() {
+    searchController.clear();
+    searchTasks(searchController.text);
+    notifyListeners();
   }
 
   //======================================

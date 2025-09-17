@@ -141,7 +141,9 @@ class TasksRepositoryImpl implements TasksRepository {
           b.editedAt ?? b.createdAt,
         ).compareTo(_parseDate(a.editedAt ?? a.createdAt));
       });
-
+      if (filteredTasks.isEmpty) {
+        return getAllTasks();
+      }
       return filteredTasks;
     } catch (e) {
       throw Exception('Failed to search tasks: $e');

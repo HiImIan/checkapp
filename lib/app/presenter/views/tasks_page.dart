@@ -50,11 +50,10 @@ class _TasksPageState extends State<TasksPage> {
       body: ListenableBuilder(
         listenable: tasksViewModel,
         builder: (_, __) {
-          final isLoading = tasksViewModel.isLoading;
           return Column(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 15),
                 child: Column(
                   children: [
                     SizedBox(height: 20),
@@ -63,10 +62,7 @@ class _TasksPageState extends State<TasksPage> {
                     SizedBox(height: 20),
                     // Textfield
                     if (!hasError) ...[
-                      TasksSearchWidget(
-                        isEnabled: !isLoading,
-                        onChange: tasksViewModel.searchTasks,
-                      ),
+                      TasksSearchWidget(tasksViewModel: tasksViewModel),
                       SizedBox(height: 20),
                     ],
                     // Filter tabs
@@ -81,6 +77,7 @@ class _TasksPageState extends State<TasksPage> {
           );
         },
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
         onPressed: _showAddTaskDialog,
         child: Icon(floatingIcon),

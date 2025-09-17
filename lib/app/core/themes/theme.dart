@@ -20,7 +20,7 @@ class AppTheme {
       elevation: 1,
     ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
-      backgroundColor: CustomColors.highPink,
+      backgroundColor: CustomColors.pink,
       foregroundColor: CustomColors.background,
     ),
     dialogTheme: DialogThemeData(
@@ -53,7 +53,6 @@ class AppTheme {
       //primary
       primary: CustomColors.pink,
       primaryFixed: CustomColors.highPink,
-      primaryFixedDim: CustomColors.lightPink,
       onPrimary: CustomColors.white,
       // secondary
       secondary: CustomColors.purple,

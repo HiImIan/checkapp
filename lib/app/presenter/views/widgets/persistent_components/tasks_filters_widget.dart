@@ -40,8 +40,8 @@ class _TasksFiltersWidgetState extends State<TasksFiltersWidget> {
     final backgroundColor = isSelected
         ? colors.surfaceContainer
         : Colors.transparent;
-    final fontWeight = isSelected ? FontWeight.w600 : null;
-    final textColor = isSelected ? colors.onSurface : Colors.grey[600];
+    final fontWeight = isSelected ? FontWeight.bold : null;
+    final textColor = isSelected ? colors.onSurface : colors.surfaceDim;
     return Expanded(
       child: GestureDetector(
         onTap: () => tasksViewModel.setSelectedTab(index),
